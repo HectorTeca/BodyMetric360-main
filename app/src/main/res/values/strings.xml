@@ -32,7 +32,7 @@
     <string name="hint_name">Nombre</string>
     <string name="hint_description">Descripción</string>
     <string name="text_send">Enviar</string>
-
+    <string name="info_icon_description">Información adicional</string>
 
     <string-array name="spinner_options">
         <item>Consultar</item>
