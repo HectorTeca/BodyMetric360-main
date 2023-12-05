@@ -36,8 +36,8 @@
         android:orientation="vertical"> -->
     <Button
         android:id="@+id/btnTmb"
-        android:layout_width="300"
-        android:layout_height="100"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:layout_marginTop="100dp"
         app:cardCornerRadius="39dp"
         android:gravity="center"
