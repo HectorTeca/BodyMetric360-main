@@ -7,11 +7,11 @@
     tools:context=".tmb.postActivity">
 
     <Spinner
-        android:id="@+id/sp_career"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/sp_majors"
+        android:layout_width="234dp"
+        android:layout_height="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
