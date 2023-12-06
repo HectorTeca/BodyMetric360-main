@@ -55,6 +55,7 @@
         android:id="@+id/buttonSend"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+
         android:text="@string/text_send"
         app:layout_constraintTop_toBottomOf="@id/editTextDescription"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +106,7 @@
         app:layout_constraintStart_toEndOf="@id/buttonPrevious"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+
         android:layout_weight="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
