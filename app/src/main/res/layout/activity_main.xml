@@ -43,10 +43,11 @@
     <Button
         android:id="@+id/btnTmb"
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_marginTop="100dp"
         app:cardCornerRadius="39dp"
         android:textSize="18dp"
+        android:background="@drawable/boton_redondo"
         android:gravity="center"
         app:backgroundTint="#4CAF50"
         android:text="@string/btn_ingresoCenso"
