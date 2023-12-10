@@ -10,7 +10,7 @@ import com.ulagos.myapplication.tmb.TmbActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnImc: Button
+    //private lateinit var btnImc: Button
     private lateinit var btnTmb: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,12 +21,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initComponent() {
-        btnImc = findViewById(R.id.btnImc)
+      //  btnImc = findViewById(R.id.btnImc)
         btnTmb = findViewById(R.id.btnTmb)
     }
 
     fun initListener() {
-        btnImc.setOnClickListener { navigateToImc() }
+       // btnImc.setOnClickListener { navigateToImc() }
         btnTmb.setOnClickListener { navigateToTmb() }
     }
 
