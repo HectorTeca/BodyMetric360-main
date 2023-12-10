@@ -7,6 +7,9 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,8 +41,8 @@ class TmbActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var usersAdapter: UsersAdapter
-
-    private val key = "123e4567-e89b-12d3-a456-426614174000"  // Tu UUID aleatorio
+companion object {
+    const val API_KEY = "123e4567-e89b-12d3-a456-426614174000"  // Tu UUID aleatorio
 
 
     private val okHttpClient = OkHttpClient.Builder()
@@ -54,9 +57,9 @@ class TmbActivity : AppCompatActivity() {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+    val apiService: ApiService = retrofit.create(ApiService::class.java)
 
-    private val apiService: ApiService = retrofit.create(ApiService::class.java)
-
+}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tmb)
@@ -136,7 +139,7 @@ class TmbActivity : AppCompatActivity() {
             try {
                 // Hacer la llamada de forma suspensa en un hilo de fondo
                 val response = withContext(Dispatchers.IO) {
-                    apiService.getUser(userId, key)
+                    apiService.getUser(userId, API_KEY)
                 }
 
                 // Manejar la respuesta
@@ -181,7 +184,7 @@ class TmbActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    apiService.updateUser(userId, userData, key)
+                    apiService.updateUser(userId, userData, API_KEY)
                 }
 
                 // Maneja la respuesta de la API
@@ -214,7 +217,7 @@ class TmbActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    apiService.addUser(newUser, key)
+                    apiService.addUser(newUser, API_KEY)
                 }
 
                 if (response.isSuccessful) {
@@ -239,7 +242,7 @@ class TmbActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    apiService.deleteUser(userId, key)
+                    apiService.deleteUser(userId, API_KEY)
                 }
 
                 if (response.isSuccessful) {
@@ -258,7 +261,7 @@ class TmbActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    apiService.getUsers(page, limit, key)
+                    apiService.getUsers(page, limit, API_KEY)
                 }
 
                 if (response.isSuccessful) {
@@ -288,14 +291,6 @@ class TmbActivity : AppCompatActivity() {
         editTextDescription.setText("")
     }
 
-    private fun mostrarDialogoInformacion() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Información Adicional")
-        builder.setMessage("Aquí va la información adicional que deseas mostrar.")
-        builder.setPositiveButton("Entendido") { dialog, _ ->
-            // Puedes hacer algo cuando el usuario hace clic en el botón "Entendido"
-            dialog.dismiss()
-        }
-        builder.show()
-    }
+
+
 }

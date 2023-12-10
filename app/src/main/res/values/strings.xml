@@ -3,6 +3,7 @@
 
     <string name="btn_imc">Índice de Masa Corporal (IMC)</string>
     <string name="btn_tmb">Tasa Metabólica Basal (TMB)</string>
+    <string name="btn_tyc">Terminos y condiciones</string>
 
     <string name="title_male">Hombre</string>
     <string name="title_female">Mujer</string>

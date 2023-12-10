@@ -20,14 +20,12 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_tmb" />
 
-    <ImageView
-        android:id="@+id/infoIcon"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnTyc"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_margin="4dp"
-        android:contentDescription="@string/info_icon_description"
-        android:src="@drawable/ic_info" /><!-- Aquí debes proporcionar tu propio recurso de imagen para el icono de información -->
+        android:text="@string/btn_tyc" />
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
