@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -63,7 +64,6 @@ class TmbActivity : AppCompatActivity() {
         initComponent()
         initListener()
     }
-
 
     private fun initComponent() {
         // Inicialización de los componentes EditText y Button
@@ -286,5 +286,16 @@ class TmbActivity : AppCompatActivity() {
         editTextId.setText("")
         editTextName.setText("")
         editTextDescription.setText("")
+    }
+
+    private fun mostrarDialogoInformacion() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Información Adicional")
+        builder.setMessage("Aquí va la información adicional que deseas mostrar.")
+        builder.setPositiveButton("Entendido") { dialog, _ ->
+            // Puedes hacer algo cuando el usuario hace clic en el botón "Entendido"
+            dialog.dismiss()
+        }
+        builder.show()
     }
 }
