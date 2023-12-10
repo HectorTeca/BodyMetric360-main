@@ -15,7 +15,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Spinner para Seleccionar Tipo de Usuario -->
+    <Spinner
+        android:id="@+id/spinnerUserType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/spinnerAction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <!-- EditText para ID -->
     <EditText
@@ -24,9 +35,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_id"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/spinnerAction"
+        app:layout_constraintTop_toBottomOf="@id/spinnerUserType"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <!-- EditText para Nombre -->
     <EditText
@@ -36,7 +48,8 @@
         android:hint="@string/hint_name"
         app:layout_constraintTop_toBottomOf="@id/editTextId"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <!-- EditText para Descripción -->
     <EditText
@@ -48,7 +61,8 @@
         android:lines="3"
         app:layout_constraintTop_toBottomOf="@id/editTextName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <!-- Botón para enviar -->
     <Button
@@ -58,7 +72,8 @@
         android:text="@string/text_send"
         app:layout_constraintTop_toBottomOf="@id/editTextDescription"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <!-- Botón para obtener todos los usuarios -->
     <Button
@@ -68,7 +83,8 @@
         android:text="Obtener Todos"
         app:layout_constraintTop_toBottomOf="@id/buttonSend"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp" />
 
     <!-- RecyclerView para mostrar los usuarios -->
     <androidx.recyclerview.widget.RecyclerView
