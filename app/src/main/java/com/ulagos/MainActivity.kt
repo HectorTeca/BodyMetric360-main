@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun obtenerYMostrarTerminos() {
         val apiKey = TmbActivity.API_KEY
 
-        GlobalScope.launch(Dispatchers.Main) {
+        GlobalScope.launch(Dispatchers.IO) {
             val terminosResponse = withContext(Dispatchers.IO) {
                 TmbActivity.apiService.getTyc("terminos", apiKey)
             }
@@ -56,9 +56,11 @@ class MainActivity : AppCompatActivity() {
                     val terminosDescription = apiResponse.tyc.description
 
                     // Ahora puedes usar terminosTitle y terminosDescription según tus necesidades
+                    mostrarResultado(terminosTitle, terminosDescription)
                 } else {
                     // Manejar el caso cuando terminosResponse.body() es nulo
                     // Por ejemplo, proporcionar valores predeterminados o mostrar un mensaje de error
+                    mostrarError("ERROR ERROR ERROR")
                     }
                 }
             }
