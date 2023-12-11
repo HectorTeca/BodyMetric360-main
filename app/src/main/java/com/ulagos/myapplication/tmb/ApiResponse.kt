@@ -12,8 +12,12 @@ data class UserData(
     val descripcion: String
 )
 
-data class terminos(
+data class TermListData(
+    val message: String,
+    val data: List<TermData>
+)
+
+data class TermData(
     val title: String,
     val description: String
 )
-

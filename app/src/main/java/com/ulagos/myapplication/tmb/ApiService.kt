@@ -48,7 +48,7 @@ interface ApiService {
     ): Response<UserListResponse>
 
     // Método para obtener los terminos y condiciones de uso
-        @GET("/{terms}")
+        @GET("terms")
         suspend fun getTyc(
             @Path("terms") terminos: String,
             @Header("X-API-KEY") apiKey: String

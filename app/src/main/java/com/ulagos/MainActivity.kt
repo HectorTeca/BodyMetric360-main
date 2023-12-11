@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
             if (terminosResponse.isSuccessful) {
                 val apiResponse = terminosResponse.body()
 
+                apiResponse?.let {
+                    val terminosTittle = apiResponse.data.ter
+                }
                 if (apiResponse != null) {
                     val terminosTitle = apiResponse.tyc.title
                     val terminosDescription = apiResponse.tyc.description
