@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.ulagos.myapplication.R
 import com.ulagos.myapplication.imc.ImcActivity
-import com.ulagos.myapplication.tmb.TmbActivity
+import com.ulagos.myapplication.tmb.postActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initComponent() {
-        btnImc = findViewById(R.id.btnImc)
+        btnImc = findViewById(R.id.btnCalculate)
         btnTmb = findViewById(R.id.btnTmb)
     }
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToTmb() {
-        val intent = Intent( this, TmbActivity::class.java)
+        val intent = Intent( this, postActivity::class.java)
         startActivity(intent)
     }
 }

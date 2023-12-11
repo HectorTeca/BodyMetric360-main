@@ -1,4 +1,5 @@
 import com.ulagos.myapplication.tmb.ApiResponse
+import com.ulagos.myapplication.tmb.MajorListResponse
 import com.ulagos.myapplication.tmb.UserData
 import com.ulagos.myapplication.tmb.UserListResponse
 import retrofit2.Response
@@ -44,4 +45,12 @@ interface ApiService {
         @Query("limit") limit: Int,
         @Header("X-API-KEY") apiKey: String
     ): Response<UserListResponse>
+
+    @GET("majors")
+    suspend fun getMajors(
+        @Query("start") start: Int,
+        @Query("limit") limit: Int,
+        @Header("X-API-KEY") apiKey: String
+    ): Response<MajorListResponse>
+
 }
