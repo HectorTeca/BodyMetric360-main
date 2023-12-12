@@ -3,12 +3,15 @@ package com.ulagos.myapplication.tmb
 import ApiService
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
 import com.ulagos.myapplication.R
+import com.ulagos.myapplication.tmb.Major
+import com.ulagos.myapplication.tmb.MajorData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,12 +26,21 @@ class postActivity : AppCompatActivity() {
 
     private val key = "123e4567-e89b-12d3-a456-426614174000" // Ajusta según tu clave API
     private lateinit var spmajors: Spinner
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post)
-        spmajors = findViewById(R.id.sp_majors)
-        getAllMajors(0, 10)
-    }
+    class postActivity : AppCompatActivity() {
+        private lateinit var apiService: ApiService // Asegúrate de inicializar esto
+
+        private val key = "123e4567-e89b-12d3-a456-426614174000" // Ajusta según tu clave API
+        private lateinit var spmajors: Spinner // Mueve la inicialización aquí
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_post)
+
+            // Inicializa el Spinner después de setContentView
+            spmajors = findViewById(R.id.sp_majors)
+
+            getAllMajors(0, 10)
+        }
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
@@ -43,37 +55,37 @@ class postActivity : AppCompatActivity() {
         .build()
 
 
-    private fun getAllMajors(page: Int, limit: Int) {
-        CoroutineScope(Dispatchers.Main).launch {
-            try {
-                val response = withContext(Dispatchers.IO) {
-                    apiService.getMajors(page, limit, key)
-                }
-
-                if (response.isSuccessful) {
-                    val majorListResponse = response.body()
-                    majorListResponse?.let {
-                        val majors = it.data.map { majorData ->
-                            Major(majorData.message, majorData.data)
-                        }
-
-                        val spinnerAdapter = ArrayAdapter<Major>(
-                            applicationContext,
-                            android.R.layout.simple_spinner_item,
-                            majors
-                        )
-
-                        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                        spmajors.adapter = spinnerAdapter
+        private fun getAllMajors(page: Int, limit: Int) {
+            CoroutineScope(Dispatchers.Main).launch {
+                try {
+                    val response = withContext(Dispatchers.IO) {
+                        apiService.getMajors(page, limit, key)
                     }
-                } else {
-                    // Manejar el error de la solicitud HTTP
-                    // Puedes mostrar un mensaje de error o realizar otras acciones según sea necesario
+
+                    if (response.isSuccessful) {
+                        val majorListResponse = response.body()
+                        majorListResponse?.let {
+                            val majors = it.data // Lista de cadenas directamente
+
+                            val spinnerAdapter = ArrayAdapter(
+                                applicationContext,
+                                android.R.layout.simple_spinner_item,
+                                majors
+                            )
+
+
+                            spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                            spmajors.adapter = spinnerAdapter
+                        }
+                    } else {
+                        // Manejar el error de la solicitud HTTP
+                        // Puedes mostrar un mensaje de error o realizar otras acciones según sea necesario
+                    }
+                } catch (e: Exception) {
+                    // Manejar errores de red u otras excepciones
                 }
-            } catch (e: Exception) {
-                // Manejar errores de red u otras excepciones
             }
         }
     }
-
 }
+

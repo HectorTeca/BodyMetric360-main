@@ -46,7 +46,7 @@ interface ApiService {
         @Header("X-API-KEY") apiKey: String
     ): Response<UserListResponse>
 
-    @GET("majors")
+    @GET("bodymetric360/majors")
     suspend fun getMajors(
         @Query("start") start: Int,
         @Query("limit") limit: Int,
