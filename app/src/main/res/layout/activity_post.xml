@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
-                    android:layout_below="@+id/edadTextView">
+                    android:layout_below="">
 
                     <Button
                         android:id="@+id/btnMinus"
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:layout_below="@+id/pesoTextView"
+                    android:layout_below=""
                     android:layout_alignParentStart="true"/>
 
                 <Button
@@ -134,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+"
-                    android:layout_below="@+id/pesoTextView"
+                    android:layout_below=""
                     android:layout_alignParentEnd="true"/>
             </RelativeLayout>
 
