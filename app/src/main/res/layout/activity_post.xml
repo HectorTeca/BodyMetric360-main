@@ -11,6 +11,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecciona el Género"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
+
         <!-- Genero -->
         <Spinner
             android:id="@+id/spinner1"
@@ -148,6 +156,15 @@
             app:cardElevation="5dp">
 
         </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecciona tu carrera"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
+
             <!-- Carrera -->
             <Spinner
                 android:id="@+id/spinnerAfterCardViews"
@@ -155,7 +172,21 @@
                 android:layout_height="65dp"
                 android:layout_marginTop="16dp" /> <!-- Add margin top -->
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecciona tu altura"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
 
             <!-- Altura -->
             <com.google.android.material.slider.RangeSlider
@@ -166,6 +197,13 @@
                 android:valueFrom="0"
                 android:valueTo="100" /> <!-- Add margin top -->
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Cuanta comida chatarra consumes?"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
 
 
         <!-- Cuanta comida chatarra -->
@@ -179,7 +217,7 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Cuanta comida chatarra" />
+            android:hint="¿Cuantos vasos de agua consumes?" />
     <!-- Horas de sueño -->
 
 
@@ -249,11 +287,25 @@
 
     </androidx.cardview.widget.CardView>
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calidad de sueño"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
     <Spinner
         android:id="@+id/spinner3"
         android:layout_width="match_parent"
         android:layout_height="65dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actividad fisica"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
     <!-- Actividad fisica -->
     <Spinner
         android:id="@+id/spinner4"
