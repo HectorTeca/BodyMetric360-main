@@ -26,33 +26,29 @@ class postActivity : AppCompatActivity() {
 
     private val key = "123e4567-e89b-12d3-a456-426614174000" // Ajusta según tu clave API
     private lateinit var spmajors: Spinner
-    class postActivity : AppCompatActivity() {
-        private lateinit var apiService: ApiService // Asegúrate de inicializar esto
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_post)
 
-        private val key = "123e4567-e89b-12d3-a456-426614174000" // Ajusta según tu clave API
-        private lateinit var spmajors: Spinner // Mueve la inicialización aquí
+        // Inicializa el Spinner después de setContentView
+        spmajors = findViewById(R.id.sp_majors)
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_post)
+        // Inicializa apiService aquí
+        val okHttpClient = OkHttpClient.Builder()
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
+            .build()
 
-            // Inicializa el Spinner después de setContentView
-            spmajors = findViewById(R.id.sp_majors)
+        apiService = Retrofit.Builder()
+            .baseUrl("https://apirest.servery2k.link/")
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiService::class.java)
 
-            getAllMajors(0, 10)
-        }
-
-    private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        })
-        .build()
-
-    private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl("https://apirest.servery2k.link/")
-        .client(okHttpClient) // Utiliza el cliente OkHttp con el interceptor
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
+        getAllMajors(0, 10)
+    }
 
 
         private fun getAllMajors(page: Int, limit: Int) {
@@ -65,13 +61,16 @@ class postActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val majorListResponse = response.body()
                         majorListResponse?.let {
-                            val majors = it.data // Lista de cadenas directamente
+                            val majors = it.data
+                            // Lista de cadenas directamente
+                            Log.d("SpinnerData", "Majors: $majors")
 
                             val spinnerAdapter = ArrayAdapter(
                                 applicationContext,
                                 android.R.layout.simple_spinner_item,
                                 majors
                             )
+                            Log.d("SpinnerData", "Majors size: ${majors.size}")
 
 
                             spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -79,13 +78,14 @@ class postActivity : AppCompatActivity() {
                         }
                     } else {
                         // Manejar el error de la solicitud HTTP
-                        // Puedes mostrar un mensaje de error o realizar otras acciones según sea necesario
+                        Log.e("SpinnerData", "Error en la solicitud HTTP: ${response.code()}")
                     }
                 } catch (e: Exception) {
                     // Manejar errores de red u otras excepciones
+                    Log.e("SpinnerData", "Error en la solicitud: ${e.message}")
                 }
             }
         }
     }
-}
+
 

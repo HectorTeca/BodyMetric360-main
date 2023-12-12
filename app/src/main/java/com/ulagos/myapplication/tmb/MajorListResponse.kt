@@ -8,7 +8,7 @@ data class Major(
 
 data class MajorListResponse (
     val message: String,
-    val data: List<MajorData>
+    val data: List<String>
 )
 
 data class MajorData(
