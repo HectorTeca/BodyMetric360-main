@@ -73,18 +73,4 @@
         android:layout_marginTop="130dp"
         app:srcCompat="@drawable/medical" />
 
-
-
-
-
-    <ImageView
-        android:id="@+id/infoIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_margin="4dp"
-        android:contentDescription="@string/info_icon_description"
-        android:src="@drawable/ic_info" /><!-- Aquí debes proporcionar tu propio recurso de imagen para el icono de información -->
-
-
 </androidx.appcompat.widget.LinearLayoutCompat>

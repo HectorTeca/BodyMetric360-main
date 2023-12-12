@@ -8,9 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.ulagos.myapplication.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,13 +18,19 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private val key = "123e4567-e89b-12d3-a456-426614174000"  // Tu UUID aleatorio
-
 class postActivity : AppCompatActivity() {
+    private lateinit var apiService: ApiService // Asegúrate de inicializar esto
 
-    private val sp_majors : Spinner = findViewById(R.id.sp_majors)
+    private val key = "123e4567-e89b-12d3-a456-426614174000" // Ajusta según tu clave API
+    private lateinit var spmajors: Spinner
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_post)
+        spmajors = findViewById(R.id.sp_majors)
+        getAllMajors(0, 10)
+    }
 
-        private val okHttpClient = OkHttpClient.Builder()
+    private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         })
@@ -40,12 +43,6 @@ class postActivity : AppCompatActivity() {
         .build()
 
 
-    private val apiService: ApiService = retrofit.create(ApiService::class.java)
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post)
-        }
     private fun getAllMajors(page: Int, limit: Int) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
@@ -57,7 +54,7 @@ class postActivity : AppCompatActivity() {
                     val majorListResponse = response.body()
                     majorListResponse?.let {
                         val majors = it.data.map { majorData ->
-                            Major(majorData.data, majorData.message)
+                            Major(majorData.message, majorData.data)
                         }
 
                         val spinnerAdapter = ArrayAdapter<Major>(
@@ -67,7 +64,7 @@ class postActivity : AppCompatActivity() {
                         )
 
                         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                        sp_majors.adapter = spinnerAdapter
+                        spmajors.adapter = spinnerAdapter
                     }
                 } else {
                     // Manejar el error de la solicitud HTTP
@@ -78,9 +75,5 @@ class postActivity : AppCompatActivity() {
             }
         }
     }
-
-
-
-
 
 }

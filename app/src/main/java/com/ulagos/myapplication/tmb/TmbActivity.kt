@@ -275,9 +275,11 @@ class TmbActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun updateRecyclerView(users: List<UserData>) {
         usersAdapter.updateUsers(users)
     }
+
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
@@ -288,14 +290,5 @@ class TmbActivity : AppCompatActivity() {
         editTextDescription.setText("")
     }
 
-    private fun mostrarDialogoInformacion() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Información Adicional")
-        builder.setMessage("Aquí va la información adicional que deseas mostrar.")
-        builder.setPositiveButton("Entendido") { dialog, _ ->
-            // Puedes hacer algo cuando el usuario hace clic en el botón "Entendido"
-            dialog.dismiss()
-        }
-        builder.show()
-    }
+
 }
