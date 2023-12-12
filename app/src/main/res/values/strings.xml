@@ -2,7 +2,7 @@
     <string name="app_name">BodyMetrics360</string>
 
     <string name="btn_imc">Índice de Masa Corporal (IMC)</string>
-    <string name="btn_tmb">Tasa Metabólica Basal (TMB)</string>
+    <string name="btn_ingresoCenso">Censo Comunitario</string>
 
     <string name="title_male">Hombre</string>
     <string name="title_female">Mujer</string>
@@ -12,6 +12,8 @@
     <string name="title_calculate">Calcular</string>
     <string name="title_recalculate">Re-Calcular</string>
     <string name="title_result">Tu resultado</string>
+    <string name="title_welcome">Bienvenido al Formulario</string>
+    <string name="title_termsConditions">Termino y Condiciones</string>
 
     <string name="error">Error</string>
 
@@ -32,7 +34,7 @@
     <string name="hint_name">Nombre</string>
     <string name="hint_description">Descripción</string>
     <string name="text_send">Enviar</string>
-
+    <string name="info_icon_description">Información adicional</string>
 
     <string-array name="spinner_options">
         <item>Consultar</item>
