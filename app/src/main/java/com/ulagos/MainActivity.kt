@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.ulagos.myapplication.R
+import com.ulagos.myapplication.TermsActivity
 import com.ulagos.myapplication.imc.ImcActivity
 import com.ulagos.myapplication.tmb.TmbActivity
 import kotlinx.coroutines.Dispatchers
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                         // Actualizar la UI en el hilo principal
                         withContext(Dispatchers.Main) {
-                            mostrarTerminosEnDialogo(terminosConcatenados)
+                            mostrarTerminosEnActivity(terminosConcatenados)
                         }
                     }
                 }
@@ -83,11 +84,13 @@ class MainActivity : AppCompatActivity() {
     fun initComponent() {
         btnImc = findViewById(R.id.btnImc)
         btnTmb = findViewById(R.id.btnTmb)
+        btnTyc = findViewById(R.id.btnTyc)
     }
 
     fun initListener() {
         btnImc.setOnClickListener { navigateToImc() }
         btnTmb.setOnClickListener { navigateToTmb() }
+        btnTyc.setOnClickListener { obtenerYMostrarTerminos() }
     }
 
     private fun navigateToImc() {
@@ -100,11 +103,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun mostrarTerminosEnDialogo(terminos: String) {
-        AlertDialog.Builder(this)
-            .setTitle("Términos y Condiciones")
-            .setMessage(terminos)
-            .setPositiveButton("Aceptar", null)
-            .show()
+    private fun mostrarTerminosEnActivity(terminos: String) {
+        val intent = Intent(this@MainActivity, TermsActivity::class.java)
+        intent.putExtra("terminos", terminos)
+        startActivity(intent)
     }
+
 }

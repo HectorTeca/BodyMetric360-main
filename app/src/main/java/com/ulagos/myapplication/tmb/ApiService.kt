@@ -49,7 +49,7 @@ interface ApiService {
     ): Response<UserListResponse>
 
     // Método para obtener los terminos y condiciones de uso
-    @GET("terms")
+    @GET("bodymetric360/terms")
     suspend fun getTyc(
         @Header("X-API-KEY") apiKey: String
     ): Response<TermsApiResponse>
