@@ -1,8 +1,9 @@
 import com.ulagos.myapplication.tmb.ApiResponse
+import com.ulagos.myapplication.tmb.TermData
+import com.ulagos.myapplication.tmb.TermListData
 import com.ulagos.myapplication.tmb.TermsApiResponse
 import com.ulagos.myapplication.tmb.UserData
 import com.ulagos.myapplication.tmb.UserListResponse
-import com.ulagos.myapplication.tmb.terminos
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -48,9 +49,11 @@ interface ApiService {
     ): Response<UserListResponse>
 
     // Método para obtener los terminos y condiciones de uso
-        @GET("terms")
-        suspend fun getTyc(
-            @Path("terms") terminos: String,
-            @Header("X-API-KEY") apiKey: String
-        ): Response<TermsApiResponse>
-    }
+    @GET("terms")
+    suspend fun getTyc(
+        @Header("X-API-KEY") apiKey: String
+    ): Response<TermsApiResponse>
+}
+
+
+

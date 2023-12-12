@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.ulagos.myapplication.R
 import com.ulagos.myapplication.imc.ImcActivity
 import com.ulagos.myapplication.tmb.TmbActivity
@@ -36,26 +37,29 @@ class MainActivity : AppCompatActivity() {
     private fun obtenerYMostrarTerminos() {
         val apiKey = TmbActivity.API_KEY
 
-        GlobalScope.launch(Dispatchers.IO) {
-            val terminosResponse = withContext(Dispatchers.IO) {
-                TmbActivity.apiService.getTyc("terminos", apiKey)
-            }
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                val terminosResponse = TmbActivity.apiService.getTyc(apiKey)
 
-            if (terminosResponse.isSuccessful) {
-                val apiResponse = terminosResponse.body()
+                if (terminosResponse.isSuccessful) {
+                    val apiResponse = terminosResponse.body()
 
-                apiResponse?.let {
-                    val terminosTitle = apiResponse.data
-                    val terminosDescription = apiResponse.data
-                    // Ahora puedes usar terminosTitle y terminosDescription según tus necesidades
-                    mostrarResultado(terminosTitle, terminosDescription)
-                    val titlesList = it.data.map { item -> item.title }
+                    apiResponse?.let {
+                        // Concatenamos los términos y sus descripciones
+                        val terminosConcatenados = it.data.joinToString("\n\n") { termListData ->
+                            termListData.data.joinToString("\n") { termData ->
+                                "${termData.title}: ${termData.description}"
+                            }
+                        }
 
-                } else {
-                    // Manejar el caso cuando terminosResponse.body() es nulo
-                    // Por ejemplo, proporcionar valores predeterminados o mostrar un mensaje de error
-                    mostrarError("ERROR ERROR ERROR")
+                        // Actualizar la UI en el hilo principal
+                        withContext(Dispatchers.Main) {
+                            mostrarTerminosEnDialogo(terminosConcatenados)
+                        }
+                    }
                 }
+            } catch (e: Exception) {
+                // Manejar el error
             }
         }
     }
@@ -96,6 +100,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun navigateToTyc
-
+    private fun mostrarTerminosEnDialogo(terminos: String) {
+        AlertDialog.Builder(this)
+            .setTitle("Términos y Condiciones")
+            .setMessage(terminos)
+            .setPositiveButton("Aceptar", null)
+            .show()
+    }
 }
