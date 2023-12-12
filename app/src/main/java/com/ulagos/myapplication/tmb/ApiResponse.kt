@@ -3,7 +3,7 @@ package com.ulagos.myapplication.tmb
 data class ApiResponse(
     val message: String,
     val data: UserData,
-    val tyc: terminos
+    val tyc: TermListData
 )
 
 data class UserData(
