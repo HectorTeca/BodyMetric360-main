@@ -73,5 +73,34 @@
         android:layout_marginTop="130dp"
         app:srcCompat="@drawable/responsive" />
 
+    <!-- SUBTITULO DE DESARROLLADO POR -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/title_credits"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewMale"
+        tools:layout_editor_absoluteX="16dp"
+        android:textAlignment="center"/>
+
+    <!-- DESARROLLADO POR ING -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/title_ing"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewMale"
+        tools:layout_editor_absoluteX="16dp"
+        android:textAlignment="center"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
