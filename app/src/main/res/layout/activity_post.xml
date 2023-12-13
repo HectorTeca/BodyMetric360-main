@@ -57,6 +57,7 @@
                         android:layout_marginTop="-50dp"/>
 
                     <TextView
+                        android:id="@+id/tvAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
@@ -116,6 +117,7 @@
                         android:layout_marginTop="-50dp"/>
 
                     <TextView
+                        android:id="@+id/tvWeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0kg"
@@ -178,6 +180,7 @@
             android:layout_gravity="center_horizontal"/>
 
         <TextView
+            android:id="@+id/tvHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -205,13 +208,13 @@
 
         <!-- Cuanta comida chatarra -->
         <Spinner
-            android:id="@+id/spinner2"
+            android:id="@+id/sp_food"
             android:layout_width="match_parent"
             android:layout_height="65dp" />
 
         <!-- Vasos de agua -->
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/TvWater"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="¿Cuantos vasos de agua consumes?" />
@@ -246,7 +249,7 @@
                     android:layout_marginTop="8dp"/>
 
                 <TextView
-                    android:id="@+id/titleTextView1"
+                    android:id="@+id/tvSleepH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -292,7 +295,7 @@
             android:textColor="@android:color/black"
             android:layout_gravity="center_horizontal"/>
         <Spinner
-            android:id="@+id/spinner3"
+            android:id="@+id/sp_SleepQuality"
             android:layout_width="match_parent"
             android:layout_height="65dp" />
 
@@ -305,7 +308,7 @@
             android:layout_gravity="center_horizontal"/>
         <!-- Actividad fisica -->
         <Spinner
-            android:id="@+id/spinner4"
+            android:id="@+id/sp_Activity"
             android:layout_width="match_parent"
             android:layout_height="65dp"
 
@@ -315,7 +318,7 @@
         <!-- Enviar -->
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bt_Send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enviar resultados" />
