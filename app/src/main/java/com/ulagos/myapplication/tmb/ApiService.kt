@@ -1,4 +1,5 @@
 import com.ulagos.myapplication.tmb.ApiResponse
+import com.ulagos.myapplication.tmb.DatosEnviar
 import com.ulagos.myapplication.tmb.MajorListResponse
 import com.ulagos.myapplication.tmb.UserData
 import com.ulagos.myapplication.tmb.UserListResponse
@@ -52,5 +53,11 @@ interface ApiService {
         @Query("limit") limit: Int,
         @Header("X-API-KEY") apiKey: String
     ): Response<MajorListResponse>
+
+    @POST("bodymetric360/submit")
+    suspend fun enviarDatos(
+        @Body datos: DatosEnviar,
+        @Header("X-API-KEY") apiKey: String
+    ): Response<ApiResponse>
 
 }

@@ -9,6 +9,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.SpinnerAdapter
+import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
+import com.google.android.material.slider.RangeSlider
 import com.ulagos.myapplication.R
 import com.ulagos.myapplication.tmb.Major
 import com.ulagos.myapplication.tmb.MajorData
@@ -26,12 +30,46 @@ class postActivity : AppCompatActivity() {
 
     private val key = "123e4567-e89b-12d3-a456-426614174000" // Ajusta según tu clave API
     private lateinit var spmajors: Spinner
+    private lateinit var spgeneros: Spinner
+    private lateinit var tvAge: TextView
+    private lateinit var btnMinusAge: Button
+    private lateinit var btnPlusAge: Button
+    private lateinit var tvWeight: TextView
+    private lateinit var btnMinusWeight: Button
+    private lateinit var btnPlusWeight: Button
+    private lateinit var spMajors: Spinner
+    private lateinit var tvHeight: TextView
+    private lateinit var spFood: Spinner
+    private lateinit var tvWater: EditText
+    private lateinit var tvSleepH: TextView
+    private lateinit var btnMinusSleep: Button
+    private lateinit var btnPlusSleep: Button
+    private lateinit var spSleepQuality: Spinner
+    private lateinit var spActivity: Spinner
+    private lateinit var btSend: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_post)
 
         // Inicializa el Spinner después de setContentView
         spmajors = findViewById(R.id.sp_majors)
+        spgeneros = findViewById(R.id.sp_generos)
+        tvAge = findViewById(R.id.tvAge)
+        btnMinusAge = findViewById(R.id.btnMinus)
+        btnPlusAge = findViewById(R.id.btnPlus)
+        tvWeight = findViewById(R.id.tvWeight)
+        btnMinusWeight = findViewById(R.id.btnMinus1)
+        btnPlusWeight = findViewById(R.id.btnPlus2)
+        spMajors = findViewById(R.id.sp_majors)
+        tvHeight = findViewById(R.id.tvHeight)
+        spFood = findViewById(R.id.sp_food)
+        tvWater = findViewById(R.id.TvWater)
+        tvSleepH = findViewById(R.id.tvSleepH)
+        btnMinusSleep = findViewById(R.id.btnMinus3)
+        btnPlusSleep = findViewById(R.id.btnPlus4)
+        spSleepQuality = findViewById(R.id.sp_SleepQuality)
+        spActivity = findViewById(R.id.sp_Activity)
+        btSend = findViewById(R.id.bt_Send)
 
         // Inicializa apiService aquí
         val okHttpClient = OkHttpClient.Builder()
@@ -86,6 +124,43 @@ class postActivity : AppCompatActivity() {
                 }
             }
         }
+
+    private fun enviarDatos() {
+        val datos = DatosEnviar(
+            gender = spgeneros.selectedItem.toString(),
+            age = tvAge.text.toString().toInt(),
+            major = spMajors.selectedItem.toString(),
+            weight = tvWeight.text.toString().toDouble(),
+            height = tvHeight.text.toString().toDouble(),
+            dietQuality = spFood.selectedItem.toString(),
+            waterIntake = tvWater.text.toString().toInt(),
+            sleepHours = tvSleepH.text.toString().toInt(),
+            sleepQuality = spSleepQuality.selectedItem.toString(),
+            physicalActivity = spActivity.selectedItem.toString()
+        )
+
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val response = withContext(Dispatchers.IO) {
+                    apiService.enviarDatos(datos, key)
+                }
+
+                if (response.isSuccessful) {
+                    val apiResponse = response.body()
+                    apiResponse?.let {
+                        // Manejar la respuesta según tus necesidades
+                        Toast.makeText(applicationContext, it.message, Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // Manejar el error de la solicitud HTTP
+                    Log.e("EnviarDatos", "Error en la solicitud HTTP: ${response.code()}")
+                }
+            } catch (e: Exception) {
+                // Manejar errores de red u otras excepciones
+                Log.e("EnviarDatos", "Error en la solicitud: ${e.message}")
+            }
+        }
+    }
     }
 
 
