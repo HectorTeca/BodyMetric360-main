@@ -86,6 +86,11 @@ class postActivity : AppCompatActivity() {
             .create(ApiService::class.java)
 
         getAllMajors(0, 10)
+
+        btSend.setOnClickListener {
+            // Aquí llamamos la función de envío POST
+            enviarDatos()
+        }
     }
 
 
