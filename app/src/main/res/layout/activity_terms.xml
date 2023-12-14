@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- activity_terms.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<!-- res/layout/activity_terms.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".TermsActivity">
+    android:layout_height="match_parent">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/textViewTerminos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/textViewTerminos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp"
-            android:textColor="@android:color/black"/>
-    </ScrollView>
+    <!-- Puedes agregar otros elementos de diseño aquí según tus necesidades -->
 
 </RelativeLayout>

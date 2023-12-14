@@ -27,43 +27,49 @@ class MainActivity : AppCompatActivity() {
         initComponent()
         initListener()
 
-        val botonMostrarTerminos = findViewById<Button>(R.id.btnTyc)
-
-        botonMostrarTerminos.setOnClickListener {
-            // Cuando se hace clic en el botón, realizar la solicitud y mostrar los términos
-            obtenerYMostrarTerminos()
+        btnTyc.setOnClickListener {
+            // Abre la actividad de Términos y Condiciones
+            val intent = Intent(this, TermsActivity::class.java)
+            startActivity(intent)
         }
+
+//        val botonMostrarTerminos = findViewById<Button>(R.id.btnTyc)
+//
+//        botonMostrarTerminos.setOnClickListener {
+//            // Cuando se hace clic en el botón, realizar la solicitud y mostrar los términos
+//            obtenerYMostrarTerminos()
+//        }
     }
 
-    private fun obtenerYMostrarTerminos() {
-        val apiKey = TmbActivity.API_KEY
-
-        lifecycleScope.launch(Dispatchers.IO) {
-            try {
-                val terminosResponse = TmbActivity.apiService.getTyc(apiKey)
-
-                if (terminosResponse.isSuccessful) {
-                    val apiResponse = terminosResponse.body()
-
-                    apiResponse?.let {
-                        // Concatenamos los términos y sus descripciones
-                        val terminosConcatenados = it.data.joinToString("\n\n") { termListData ->
-                            termListData.data.joinToString("\n") { termData ->
-                                "${termData.title}: ${termData.description}"
-                            }
-                        }
-
-                        // Actualizar la UI en el hilo principal
-                        withContext(Dispatchers.Main) {
-                            mostrarTerminosEnActivity(terminosConcatenados)
-                        }
-                    }
-                }
-            } catch (e: Exception) {
-                // Manejar el error
-            }
-        }
-    }
+//    private fun obtenerYMostrarTerminos() {
+//        val apiKey = TmbActivity.API_KEY
+//
+//        lifecycleScope.launch(Dispatchers.IO) {
+//            try {
+//                val terminosResponse = TmbActivity.apiService.getTyc(apiKey)
+//
+//                if (terminosResponse.isSuccessful) {
+//                    val apiResponse = terminosResponse.body()
+//
+//                    apiResponse?.let {
+//                        // Concatenamos los términos y sus descripciones
+//                        val terminosConcatenados = it.data.joinToString("\n\n") { termListData ->
+//                            termListData.data.joinToString("\n") { termData ->
+//                                "${termData.title}: ${termData.description}"
+//                            }
+//                        }
+//
+//                        // Actualizar la UI en el hilo principal
+//                        withContext(Dispatchers.Main) {
+//                            mostrarTerminosEnActivity(terminosConcatenados)
+//                        }
+//                    }
+//                }
+//            } catch (e: Exception) {
+//                // Manejar el error
+//            }
+//        }
+//    }
 
     private fun mostrarResultado(title: String, description: String) {
         val alertDialog = AlertDialog.Builder(this@MainActivity)
@@ -90,7 +96,7 @@ class MainActivity : AppCompatActivity() {
     fun initListener() {
         btnImc.setOnClickListener { navigateToImc() }
         btnTmb.setOnClickListener { navigateToTmb() }
-        btnTyc.setOnClickListener { obtenerYMostrarTerminos() }
+//        btnTyc.setOnClickListener {obtenerYMostrarTerminos()}
     }
 
     private fun navigateToImc() {
