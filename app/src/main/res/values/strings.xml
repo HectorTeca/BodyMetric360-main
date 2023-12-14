@@ -42,4 +42,30 @@
         <item>Eliminar</item>
         <item>Agregar</item>
     </string-array>
+    <string-array name="generos">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+        <item>Prefiero no decirlo</item>
+    </string-array>
+    <string-array name="comidachatarra">
+        <item>Todos los días</item>
+        <item>La mayoría de los días</item>
+        <item>Algunos días</item>
+        <item>Raramente</item>
+        <item>Nunca</item>
+    </string-array>
+    <string-array name="calidadsueño">
+        <item>Muy Mala - &#128542;</item>
+        <item>Mala - &#128528;</item>
+        <item>Regular - &#128528;</item>
+        <item>Buena - &#128578;</item>
+        <item>Excelente - &#128512;</item>
+    </string-array>
+    <string-array name="nivelactividad">
+        <item>Sedentario (poco o ningún ejercicio)</item>
+        <item>Ligeramente Activo (deportes de 1 a 3 días a la semana)</item>
+        <item>Moderadamente Activo (deportes de 3 a 5 días a la semana)</item>
+        <item>Muy Activo (deportes de 6 a 7 días a la semana)</item>
+    </string-array>
 </resources>
