@@ -2,7 +2,6 @@ package com.ulagos.myapplication.tmb
 
 import ApiService
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
@@ -12,6 +11,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.slider.RangeSlider
 import com.ulagos.myapplication.R
 import kotlinx.coroutines.CoroutineScope
@@ -80,6 +80,14 @@ class postActivity : AppCompatActivity() {
         spActivity = findViewById(R.id.sp_Activity)
         slHeight = findViewById<RangeSlider>(R.id.slHeight)
         btSend = findViewById(R.id.bt_Send)
+        //CARLOS MUNOZ
+        tvAge.text = "30"
+        tvWeight.text = "70"
+        tvHeight.text = "100"
+        //CARLOS MUNOZ
+
+
+
 
         // Spinner para géneros
         val generosArray = resources.getStringArray(R.array.generos)
@@ -88,21 +96,21 @@ class postActivity : AppCompatActivity() {
         generosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spGeneros.adapter = generosAdapter
 
-        // Spinner para comida chatarra
+// Spinner para comida chatarra
         val comidachatarraArray = resources.getStringArray(R.array.comidachatarra)
         val spFood = findViewById<Spinner>(R.id.sp_food)
         val comidachatarraAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, comidachatarraArray)
         comidachatarraAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spFood.adapter = comidachatarraAdapter
 
-        // Spinner para calidad de sueño
+// Spinner para calidad de sueño
         val calidadsuenoArray = resources.getStringArray(R.array.calidadsueño)
         val spSleepQuality = findViewById<Spinner>(R.id.sp_SleepQuality)
         val calidadsuenoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, calidadsuenoArray)
         calidadsuenoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spSleepQuality.adapter = calidadsuenoAdapter
 
-        // Spinner para nivel de actividad
+// Spinner para nivel de actividad
         val nivelactividadArray = resources.getStringArray(R.array.nivelactividad)
         val spActivity = findViewById<Spinner>(R.id.sp_Activity)
         val nivelactividadAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, nivelactividadArray)
