@@ -55,15 +55,15 @@
         android:textAlignment="center"/>
 
     <!-- BOTÓN DE INFORMACIÓN SOBRE TERMINO Y CONDICIONES -->
-    <Button
-        android:id="@+id/btnInformacion"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="@string/title_termsConditions"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btnInformacion"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/title_termsConditions"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <!-- ICONO DE REFERENCIA PARA EL FORMULARIO -->
     <ImageView
