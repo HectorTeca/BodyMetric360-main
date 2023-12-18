@@ -2,23 +2,18 @@ package com.ulagos.myapplication.tmb
 
 import ApiService
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import android.widget.SpinnerAdapter
 import android.widget.TextView
 import android.widget.Toast
-import androidx.cardview.widget.CardView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.slider.RangeSlider
 import com.ulagos.myapplication.R
-import com.ulagos.myapplication.tmb.Major
-import com.ulagos.myapplication.tmb.MajorData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -85,6 +80,14 @@ class postActivity : AppCompatActivity() {
         spActivity = findViewById(R.id.sp_Activity)
         slHeight = findViewById<RangeSlider>(R.id.slHeight)
         btSend = findViewById(R.id.bt_Send)
+        //CARLOS MUNOZ
+        tvAge.text = "30"
+        tvWeight.text = "70"
+        tvHeight.text = "100"
+        //CARLOS MUNOZ
+
+
+
 
         // Spinner para géneros
         val generosArray = resources.getStringArray(R.array.generos)
