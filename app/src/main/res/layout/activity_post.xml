@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <!-- TITULO CENSO COMUNITARIO -->
@@ -35,7 +35,7 @@
             android:textSize="20sp"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
-            android:textColor="#FF9800"
+            android:textColor="#FFC107"
             android:layout_gravity="center_horizontal"/>
 
         <!-- ICONO REFERENCIA DE GÉNERO -->
@@ -62,15 +62,16 @@
         <Spinner
             android:id="@+id/sp_generos"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:spinnerMode="dropdown"
-            app:backgroundTint="#FBFBFB"/>
+            android:background="@android:drawable/btn_dropdown"
+            app:backgroundTint="#FFC107"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="25dp">
 
             <!-- ETIQUETA DE LA EDAD -->
             <androidx.cardview.widget.CardView
@@ -81,7 +82,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="15dp"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="55dp">
+                app:cardCornerRadius="50dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -117,8 +118,8 @@
                         android:layout_marginTop="-25dp"/>
 
                     <LinearLayout
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="200dp"
+                        android:layout_height="85dp"
                         android:orientation="horizontal"
                         android:gravity="center">
 
@@ -129,6 +130,7 @@
                             android:id="@+id/btnMinus"
                             android:layout_width="50dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="15dp"
                             android:text="-"
@@ -143,9 +145,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
                             android:layout_marginEnd="15dp"
+                            android:background="@drawable/boton_redondo"
                             android:text="+"
                             android:textSize="25dp"
-                            android:background="@drawable/boton_redondo"
                             app:backgroundTint="@color/purple_500"
                             app:tint="@color/white" />
 
@@ -158,57 +160,50 @@
             <!-- ETIQUETA DE PESO -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/CardviewWeight"
-                android:layout_width="5dp"
+                android:layout_width="3dp"
                 android:layout_weight="1"
                 android:layout_height="150dp"
                 android:layout_marginStart="8dp"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="55dp">
+                app:cardCornerRadius="50dp"
+                android:layout_marginTop="2dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:gravity="center_vertical">
+                    android:layout_height="175dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="1dp">
 
                     <!-- ETIQUETA DEL TITULO PESO -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_Peso"
-                        android:textSize="18dp"
-                        android:textColor="@android:color/black"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="-40dp"/>
+                        android:layout_marginTop="-44dp"
+                        android:text="@string/title_Peso"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="-20dp">
+                        android:layout_marginTop="-20dp"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/tvWeight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
-                            android:textSize="38sp"
-                            android:textStyle="bold"
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
-                            android:textColor="@color/purple_500" />
-
-                        <!--
-                        <TextView
-                            android:id="@+id/tvWeight2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KG"
-                            android:textSize="18sp"
-                            android:textColor="@android:color/black"
-                            android:layout_marginStart="8dp"/> -->
+                            android:layout_marginTop="-7sp"
+                            android:text="0"
+                            android:textColor="@color/purple_500"
+                            android:textSize="38sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <Button
@@ -216,7 +211,7 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
-                        android:layout_marginStart="23dp"
+                        android:layout_marginStart="25dp"
                         android:layout_marginTop="28dp"
                         android:layout_marginEnd="20dp"
                         android:background="@drawable/boton_redondo"
@@ -230,17 +225,16 @@
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginStart="35dp"
                         android:layout_marginTop="28dp"
-                        android:layout_marginEnd="33dp"
+                        android:layout_marginEnd="25dp"
+                        android:background="@drawable/boton_redondo"
                         android:text="+"
                         android:textSize="25dp"
-                        android:background="@drawable/boton_redondo"
                         app:backgroundTint="@color/purple_500"
                         app:tint="@color/white" />
                 </RelativeLayout>
-
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
 
         <!-- Agrega aquí el contenido de tu CardView 1 -->
@@ -277,20 +271,21 @@
         <Spinner
             android:id="@+id/sp_majors"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="16dp"
-            android:textColor="#8BC34A"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"/> <!-- Add margin top -->
+            android:background="@android:drawable/btn_dropdown"
+            app:backgroundTint="#FFC107"
+            android:textColor="@color/purple_500"/>
 
         <!-- ICONO ACTIVIDAD FISICA -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_marginTop="30dp"
-            app:srcCompat="@drawable/height_svgrepo_com" />
+            app:srcCompat="@drawable/height_svgrepo_com"
+            android:contentDescription=""/>
 
         <!-- TITULO SELECCIÓN DE ALTURA -->
         <TextView
@@ -350,7 +345,8 @@
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_marginTop="30dp"
-            app:srcCompat="@drawable/burger" />
+            app:srcCompat="@drawable/burger"
+            android:contentDescription=""/>
 
         <!-- TITULO CONSUMO CANTIDAD COMIDA CHATARRA -->
         <TextView
@@ -368,7 +364,10 @@
         <Spinner
             android:id="@+id/sp_food"
             android:layout_width="match_parent"
-            android:layout_height="65dp" />
+            android:layout_height="50dp"
+            app:backgroundTint="#FFC107"
+            android:background="@android:drawable/btn_dropdown"
+            android:textColor="@color/purple_500"/>/>
 
         <!-- ICONO ACTIVIDAD FISICA -->
         <ImageView
@@ -413,7 +412,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/title_hoursSleep"
                     android:textStyle="bold"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/purple_500"
                     android:fontFamily="sans-serif"
                     android:layout_alignParentTop="true"
@@ -493,14 +492,18 @@
         <Spinner
             android:id="@+id/sp_SleepQuality"
             android:layout_width="match_parent"
-            android:layout_height="65dp" />
+            android:layout_height="50dp"
+            app:backgroundTint="#FFC107"
+            android:background="@android:drawable/btn_dropdown"
+            android:textColor="@color/purple_500"/>
 
         <!-- ICONO ACTIVIDAD FISICA -->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_marginTop="30dp"
-            app:srcCompat="@drawable/barbell_gym" />
+            app:srcCompat="@drawable/barbell_gym"
+            android:contentDescription=""/>
 
         <!-- TITULO NIVEL ACTIVIDAD FÍSICA -->
         <TextView
@@ -516,7 +519,10 @@
         <Spinner
             android:id="@+id/sp_Activity"
             android:layout_width="match_parent"
-            android:layout_height="65dp"/>
+            android:layout_height="50dp"
+            app:backgroundTint="#FFC107"
+            android:background="@android:drawable/btn_dropdown"
+            android:textColor="@color/purple_500"/>
 
         <!-- TITULO BOTON ENVIAR RESULTADOS -->
         <Button
@@ -527,9 +533,11 @@
             android:text="@string/title_sendResults"
             android:gravity="center"
             android:textSize="18dp"
+            android:layout_marginTop="15dp"
             android:textStyle="bold"
             android:background="@drawable/boton_redondo"
-            app:backgroundTint="#673AB7"
+            app:backgroundTint="#FFC107"
+            android:textColor="@color/purple_500"
             android:textAlignment="center"/>
 
     </LinearLayout>

@@ -22,14 +22,15 @@
     <string name="title_selecCareer">Selecciona tu Carrera</string>
     <string name="title_selecHeight">Selecciona tu Altura</string>
     <string name="title_junkFood">¿Cuánta comida chatarra consumes?</string>
-    <string name="title_hoursSleep">¿Cuántas horas de sueño?</string>
+    <string name="title_hoursSleep">¿Cantidad promedio horas de sueño?</string>
     <string name="title_sleepQuality">Selecciona tu Calidad de Sueño</string>
     <string name="title_physicalActivity">¿Cómo es tu Actividad Física?</string>
     <string name="title_sendResults">ENVIAR RESULTADOS</string>
     <string name="title_Edad">EDAD</string>
     <string name="title_Peso">PESO</string>
-    <string name="title_Derechos">Derechos Reservados ®</string>
+    <string name="title_Project">Proyecto desarrollado por</string>
     <string name="title_Ingenieria">INGENIERÍA EN INFORMÁTICA</string>
+    <string name="title_Ulagos">Ulagos Chiloé 2023</string>
 
     <string name="error">Error</string>
 
