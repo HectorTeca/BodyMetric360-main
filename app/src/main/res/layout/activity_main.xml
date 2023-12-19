@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +7,7 @@
     android:orientation="vertical"
     android:paddingVertical="32dp"
     android:paddingHorizontal="40dp"
-    android:background="@color/background_fab"
+    android:background="#673AB7"
     tools:context="com.ulagos.MainActivity">
 
     <!-- TITULO BIENVENIDA DEL FORMULARIO -->
@@ -21,56 +20,89 @@
         android:fontFamily="sans-serif-medium"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/viewMale"
         tools:layout_editor_absoluteX="16dp"
         android:textAlignment="center"/>
 
-    <!--<Button
-        android:id="@+id/btnImc"
+    <!-- ICONO DE REFERENCIA PARA EL FORMULARIO -->
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_imc" /> -->
-
-    <!--<androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="89dp"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:orientation="vertical"> -->
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        app:srcCompat="@drawable/logoulagos__2_" />
 
     <!-- BOTÓN DE INGRESO PARA EL FORMULARIO -->
     <Button
         android:id="@+id/btnTmb"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         app:cardCornerRadius="39dp"
-        android:textSize="18dp"
+        android:textSize="19sp"
         android:background="@drawable/boton_redondo"
         android:gravity="center"
+        android:textStyle="bold"
         app:backgroundTint="#4CAF50"
         android:text="@string/btn_ingresoCenso"
         android:fontFamily="sans-serif-medium"
         android:textAlignment="center"/>
 
     <!-- BOTÓN DE INFORMACIÓN SOBRE TERMINO Y CONDICIONES -->
-<!--    <Button-->
-<!--        android:id="@+id/btnInformacion"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/title_termsConditions"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <Button
+        android:id="@+id/btnInformacion"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_termsConditions"
+        app:backgroundTint="#9C27B0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- ICONO DE REFERENCIA PARA EL FORMULARIO -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginTop="130dp"
-        app:srcCompat="@drawable/medical" />
+        android:layout_height="110dp"
+        android:layout_marginTop="110dp"
+        app:srcCompat="@drawable/responsive" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/title_Project"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="@string/title_Ingenieria"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:layout_marginTop="0dp"
+        android:textSize="15sp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/title_Ulagos"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginTop="0dp"
+        android:textAlignment="center"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
