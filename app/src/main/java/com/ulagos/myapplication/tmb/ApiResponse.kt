@@ -5,7 +5,6 @@ data class ApiResponse(
     val data: UserData
 )
 
-
 data class UserData(
     val id: Int? = null,
     val nombre: String,
@@ -24,7 +23,16 @@ data class DatosEnviar(
     val sleepQuality: String,
     val physicalActivity: String
 )
+data class TermsData(
+    val title: String,
+    val description: String
+) : Iterable<Any> {
+    override fun iterator(): Iterator<Any> {
+        return listOf(title, description).iterator()
+    }
+}
 
-
-
-
+data class TermsResponse(
+    val message: String,
+    val data: List<TermsData>  // Cambiar aquí
+)
