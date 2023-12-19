@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:paddingVertical="32dp"
     android:paddingHorizontal="40dp"
-    android:background="@color/background_fab"
+    android:background="#3F51B5"
     tools:context="com.ulagos.MainActivity">
 
     <!-- TITULO BIENVENIDA DEL FORMULARIO -->
@@ -26,25 +26,13 @@
         tools:layout_editor_absoluteX="16dp"
         android:textAlignment="center"/>
 
-    <!--<Button
-        android:id="@+id/btnImc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_imc" /> -->
-
-    <!--<androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="89dp"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:orientation="vertical"> -->
 
     <!-- BOTÓN DE INGRESO PARA EL FORMULARIO -->
     <Button
         android:id="@+id/btnTmb"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="39dp"
         android:textSize="18dp"
         android:background="@drawable/boton_redondo"
@@ -60,6 +48,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/title_termsConditions"
+        app:backgroundTint="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +60,30 @@
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_marginTop="130dp"
-        app:srcCompat="@drawable/medical" />
+        app:srcCompat="@drawable/responsive" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/title_Derechos"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewMale"
+        tools:layout_editor_absoluteX="16dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/title_Ingenieria"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="15dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

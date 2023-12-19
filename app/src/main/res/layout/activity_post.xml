@@ -3,27 +3,68 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="32dp"
+    android:background="#009688">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- TITULO CENSO COMUNITARIO -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selecciona el Género"
+            android:layout_marginTop="8dp"
+            android:text="@string/title_welcomeProject"
             android:textSize="18sp"
-            android:textColor="@android:color/black"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"/>
 
-        <!-- Genero -->
+        <!-- TITULO BODYMETRIC360 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/title_nameFormulary"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#FF9800"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- ICONO REFERENCIA DE GÉNERO -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/gender"
+            tools:ignore="DuplicateIds" />
+
+        <!-- TITULO SELECCIÓN DE GÉNERO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="@string/title_selecGender"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textColor="#FFC107"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- SPINNER SELECCIÓN DE GÉNERO -->
         <Spinner
             android:id="@+id/sp_generos"
             android:layout_width="match_parent"
-            android:layout_height="65dp" />
+            android:layout_height="40dp"
+            android:spinnerMode="dropdown"
+            app:backgroundTint="#FBFBFB"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,90 +72,114 @@
             android:orientation="horizontal"
             android:layout_marginTop="16dp">
 
-            <!-- Edad -->
+            <!-- ETIQUETA DE LA EDAD -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/CardViewAge"
-                android:layout_width="0dp"
+                android:layout_width="5dp"
                 android:layout_weight="1"
                 android:layout_height="150dp"
-                android:layout_marginEnd="8dp"
-                app:cardBackgroundColor="@color/background_component_selected"
-                app:cardCornerRadius="16dp">
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="55dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="170dp"
                     android:gravity="center_vertical">
 
+                    <!-- "ETIQUETA DEL TITULO EDAD" -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Edad"
-                        android:textSize="18sp"
+                        android:text="@string/title_Edad"
+                        android:textSize="18dp"
+                        android:textAllCaps="true"
                         android:textColor="@android:color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="-50dp"/>
+                        android:layout_marginTop="-40dp"/>
 
+                    <!-- "ETIQUETA DEL VALOR EDAD" -->
                     <TextView
                         android:id="@+id/tvAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="0"
-                        android:textSize="18sp"
-                        android:textColor="@android:color/black"
+                        android:textSize="38sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_500"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="-20dp"/>
+                        android:layout_marginTop="-25dp"/>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center">
 
+                        <!-- "BOTÓN FLOTANTE PARA DISMINUIR EDAD" -->
+
+                        <!-- "BOTÓN ORIGINAL FLOTANTE PARA AUMENTAR EDAD" -->
                         <Button
                             android:id="@+id/btnMinus"
-                            android:layout_width="wrap_content"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
                             android:text="-"
-                            android:layout_marginEnd="8dp"/>
+                            android:textSize="25dp"
+                            android:background="@drawable/boton_redondo"
+                            app:backgroundTint="@color/purple_500"
+                            app:tint="@color/white" />
 
                         <Button
                             android:id="@+id/btnPlus"
-                            android:layout_width="wrap_content"
+                            android:layout_width="50dp"
                             android:layout_height="wrap_content"
-                            android:text="+"/>
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:text="+"
+                            android:textSize="25dp"
+                            android:background="@drawable/boton_redondo"
+                            app:backgroundTint="@color/purple_500"
+                            app:tint="@color/white" />
+
                     </LinearLayout>
 
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Peso -->
+            <!-- ETIQUETA DE PESO -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/CardviewWeight"
-                android:layout_width="0dp"
+                android:layout_width="5dp"
                 android:layout_weight="1"
                 android:layout_height="150dp"
                 android:layout_marginStart="8dp"
-                app:cardBackgroundColor="@color/background_component_selected"
-                app:cardCornerRadius="16dp">
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="55dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="180dp"
                     android:gravity="center_vertical">
 
+                    <!-- ETIQUETA DEL TITULO PESO -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Peso"
-                        android:textSize="18sp"
+                        android:text="@string/title_Peso"
+                        android:textSize="18dp"
                         android:textColor="@android:color/black"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="-50dp"/>
+                        android:layout_marginTop="-40dp"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -129,32 +194,49 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:textSize="18sp"
-                            android:textColor="@android:color/black" />
+                            android:textSize="38sp"
+                            android:textStyle="bold"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:textColor="@color/purple_500" />
 
+                        <!--
                         <TextView
                             android:id="@+id/tvWeight2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="kgs"
+                            android:text="KG"
                             android:textSize="18sp"
                             android:textColor="@android:color/black"
-                            android:layout_marginStart="8dp"/> <!-- Ajusta el margen según tu preferencia -->
+                            android:layout_marginStart="8dp"/> -->
                     </LinearLayout>
 
                     <Button
                         android:id="@+id/btnMinus1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/boton_redondo"
                         android:text="-"
-                        android:layout_alignParentStart="true"/>
+                        android:textSize="25dp"
+                        app:backgroundTint="@color/purple_500"
+                        app:tint="@color/white" />
 
                     <Button
                         android:id="@+id/btnPlus2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginEnd="33dp"
                         android:text="+"
-                        android:layout_alignParentEnd="true"/>
+                        android:textSize="25dp"
+                        android:background="@drawable/boton_redondo"
+                        app:backgroundTint="@color/purple_500"
+                        app:tint="@color/white" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
@@ -171,28 +253,56 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!-- ICONO CARRERA UNIVERSITARIA -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/student" />
+
+        <!-- TITULO SELECCIÓN DE CARRERA UNIVERSITARIA -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selecciona tu carrera"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_gravity="center_horizontal"/>
+            android:text="@string/title_selecCareer"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#FFC107"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"/>
 
-        <!-- Carrera -->
+        <!-- SPINNER SELECCIÓN DE CARRERA UNIVERSITARIA -->
         <Spinner
             android:id="@+id/sp_majors"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginTop="16dp" /> <!-- Add margin top -->
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:textColor="#8BC34A"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/> <!-- Add margin top -->
 
+        <!-- ICONO ACTIVIDAD FISICA -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/height_svgrepo_com" />
+
+        <!-- TITULO SELECCIÓN DE ALTURA -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Selecciona tu altura"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_gravity="center_horizontal"/>
+            android:text="@string/title_selecHeight"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColor="#FFC107"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -203,159 +313,224 @@
             android:layout_marginTop="5dp"
             android:layout_gravity="center_horizontal">
 
+            <!-- NIVEL DE ALTURA -->
             <TextView
                 android:id="@+id/tvHeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textSize="18sp"
-                android:textColor="@android:color/black" />
+                android:textStyle="bold"
+                android:textSize="40dp"
+                android:textColor="@color/white" />
 
+            <!-- NIVEL DE ALTURA EN CENTIMETROS -->
             <TextView
                 android:id="@+id/tvHeight2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="cms"
-                android:textSize="18sp"
-                android:textColor="@android:color/black"
-                android:layout_marginStart="8dp"/> <!-- Ajusta el margen según tu preferencia -->
+                android:text="cm"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"/> <!-- Ajusta el margen según tu preferencia -->
         </LinearLayout>
 
-        <!-- Altura -->
+        <!-- COMPONENTE SLIDER SELECCIÓN NIVEL DE ALTURA -->
         <com.google.android.material.slider.RangeSlider
             android:id="@+id/slHeight"
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_marginTop="16dp"
-            android:valueFrom="0"
-            android:valueTo="300"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:valueFrom="100"
+            android:valueTo="210"
             app:labelBehavior="gone"/> <!-- Add margin top -->
 
+        <!-- ICONO COMIDA CHATARRA -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/burger" />
+
+        <!-- TITULO CONSUMO CANTIDAD COMIDA CHATARRA -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Cuanta comida chatarra consumes?"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
+            android:text="@string/title_junkFood"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#FFC107"
             android:layout_gravity="center_horizontal"/>
 
 
-        <!-- Cuanta comida chatarra -->
+        <!-- SPINNER NIVEL DE COMIDA CHATARRA -->
         <Spinner
             android:id="@+id/sp_food"
             android:layout_width="match_parent"
             android:layout_height="65dp" />
 
-        <!-- Vasos de agua -->
+        <!-- ICONO ACTIVIDAD FISICA -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/water" />
+
+        <!-- TITULO PREGUNTA DEL DE VASOS DE AGUA -->
         <EditText
             android:id="@+id/TvWater"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="¿Cuantos vasos de agua consumes?" />
-        <!-- Horas de sueño -->
+            android:hint="¿Digita cuántos vasos de agua consumes?"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"/>
 
-
-        <!-- Calidad de sueño -->
-
+        <!-- ETIQUETA HORAS DE SUEÑO -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="410dp"
-            android:layout_height="150dp"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="8dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="790dp"
             app:cardElevation="5dp"
-            app:cardBackgroundColor="@color/background_component_selected">
+            app:cardBackgroundColor="#FFFFFF">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
 
+                <!-- TITULO CANTIDAD HORAS DE SUEÑO -->
                 <TextView
                     android:id="@+id/titleTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿Cuantas horas de sueño?"
+                    android:text="@string/title_hoursSleep"
+                    android:textStyle="bold"
                     android:textSize="18sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/purple_500"
+                    android:fontFamily="sans-serif"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="5dp"/>
 
+                <!-- CANTIDAD HORAS DE SUEÑO -->
                 <TextView
                     android:id="@+id/tvSleepH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/black"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_500"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"/>
+                    android:layout_marginTop="25dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/titleTextView"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="30dp"
                     android:gravity="center"
                     android:orientation="horizontal">
 
+                    <!-- BOTON DISMINUIR HORAS DE SUEÑO -->
+
+                    <!-- BOTON AUMENTAR HORAS DE SUEÑO -->
                     <Button
                         android:id="@+id/btnMinus3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="-" />
+                        android:layout_marginEnd="35dp"
+                        android:background="@drawable/boton_redondo"
+                        android:text="-"
+                        android:textSize="28dp"
+                        app:backgroundTint="#4CAF50" />
 
                     <Button
                         android:id="@+id/btnPlus4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="+" />
+                        android:background="@drawable/boton_redondo"
+                        android:text="+"
+                        android:textSize="28dp"
+                        app:backgroundTint="#4CAF50" />
                 </LinearLayout>
 
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
+        <!-- ICONO CALIDAD DE SUEÑO -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/sleeping" />
+
+        <!-- TITULO SELECCIÓN CALIDAD DE SUEÑO -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calidad de sueño"
+            android:text="@string/title_sleepQuality"
             android:textSize="18sp"
-            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textColor="#FFC107"
             android:layout_gravity="center_horizontal"/>
+
+        <!-- SPINNER NIVEL ACTIVIDAD FÍSICA -->
         <Spinner
             android:id="@+id/sp_SleepQuality"
             android:layout_width="match_parent"
             android:layout_height="65dp" />
 
+        <!-- ICONO ACTIVIDAD FISICA -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/barbell_gym" />
+
+        <!-- TITULO NIVEL ACTIVIDAD FÍSICA -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Actividad fisica"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
+            android:text="@string/title_physicalActivity"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#FFC107"
             android:layout_gravity="center_horizontal"/>
-        <!-- Actividad fisica -->
+
+        <!-- SPINNER ACTIVIDAD FÍSICA -->
         <Spinner
             android:id="@+id/sp_Activity"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="65dp"/>
 
-            />
-
-
-        <!-- Enviar -->
-
+        <!-- TITULO BOTON ENVIAR RESULTADOS -->
         <Button
             android:id="@+id/bt_Send"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enviar resultados" />
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/title_sendResults"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:background="@drawable/boton_redondo"
+            app:backgroundTint="#673AB7"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 </ScrollView>

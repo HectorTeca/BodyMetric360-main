@@ -15,6 +15,22 @@
     <string name="title_welcome">Bienvenido al Formulario</string>
     <string name="title_termsConditions">Termino y Condiciones</string>
 
+    <!-- Titulos -->
+    <string name="title_welcomeProject">Proyecto de Censo Comunitario</string>
+    <string name="title_nameFormulary">BODYMETRIC360</string>
+    <string name="title_selecGender">Selección de Género</string>
+    <string name="title_selecCareer">Selecciona tu Carrera</string>
+    <string name="title_selecHeight">Selecciona tu Altura</string>
+    <string name="title_junkFood">¿Cuánta comida chatarra consumes?</string>
+    <string name="title_hoursSleep">¿Cuántas horas de sueño?</string>
+    <string name="title_sleepQuality">Selecciona tu Calidad de Sueño</string>
+    <string name="title_physicalActivity">¿Cómo es tu Actividad Física?</string>
+    <string name="title_sendResults">ENVIAR RESULTADOS</string>
+    <string name="title_Edad">EDAD</string>
+    <string name="title_Peso">PESO</string>
+    <string name="title_Derechos">Derechos Reservados ®</string>
+    <string name="title_Ingenieria">INGENIERÍA EN INFORMÁTICA</string>
+
     <string name="error">Error</string>
 
     <string name="title_underweight">Bajo peso</string>
@@ -56,11 +72,11 @@
         <item>Nunca</item>
     </string-array>
     <string-array name="calidadsueño">
-        <item>Muy Mala - &#128542;</item>
-        <item>Mala - &#128528;</item>
-        <item>Regular - &#128528;</item>
-        <item>Buena - &#128578;</item>
-        <item>Excelente - &#128512;</item>
+        <item> &#128542; Muy Mala</item>
+        <item> &#128528; Mala</item>
+        <item> &#128528; Regular</item>
+        <item> &#128578; Buena</item>
+        <item> &#128512; Excelente</item>
     </string-array>
     <string-array name="nivelactividad">
         <item>Sedentario (poco o ningún ejercicio)</item>
